@@ -8,13 +8,34 @@ Built from real work running demand gen programs at B2B SaaS and professional se
 
 ## What's Inside
 
-| Section | What it covers |
+### Campaign Planning
+| Doc | What it covers |
 |---|---|
-| [Paid Media Channel Guide](retargeting/channel-and-content-guide.md) | Channel selection by funnel stage, content format matching, targeting logic per platform |
-| [Retargeting Strategy](retargeting/retargeting-strategy.md) | How to build audience pools across LinkedIn, Google, ZoomInfo Display, and Meta Ads |
-| [UTM Naming Convention](tracking/utm-naming-convention.md) | Standard naming structure for paid campaigns, with examples |
-| [Salesforce Campaign Hierarchy](tracking/salesforce-campaign-hierarchy.md) | How to structure campaigns in Salesforce so marketing attribution actually works |
-| [Salesforce Contact Roles & Attribution](tracking/salesforce-contact-roles-attribution.md) | Why Contact Roles matter for multi-touch attribution, and how to get sales to actually fill them in |
+| [Campaign Planning Framework](campaign-planning/campaign-planning-framework.md) | Input-gathering process, what makes a good B2B campaign theme, ABM considerations, shared brainstorm structure |
+
+### Paid Media Channels & Retargeting
+| Doc | What it covers |
+|---|---|
+| [Channel & Content Guide](retargeting/channel-and-content-guide.md) | Channel selection by funnel stage, content format matching, targeting logic per platform |
+| [Retargeting Strategy](retargeting/retargeting-strategy.md) | How to build audience pools across LinkedIn, Google, ZoomInfo Display, and Meta Ads — platform minimums, common mistakes |
+| [Brand + Demand Channel Waterfall](retargeting/brand-demand-channel-waterfall.md) | How brand awareness and demand gen channels should hand off audiences across the full buyer journey |
+
+### Tracking & Attribution
+| Doc | What it covers |
+|---|---|
+| [UTM Naming Convention](tracking/utm-naming-convention.md) | Standard naming structure for paid campaigns, with full URL examples and Salesforce flow |
+| [Google Ads → Salesforce](tracking/google-ads-to-salesforce.md) | GCLID capture, Offline Conversion Import, Smart Bidding setup — closing the loop from click to MQL |
+| [Salesforce Campaign Hierarchy](tracking/salesforce-campaign-hierarchy.md) | Parent/child campaign structure, campaign fields, connecting campaigns to opportunities |
+| [Salesforce Contact Roles & Attribution](tracking/salesforce-contact-roles-attribution.md) | Why Contact Roles are the missing link in B2B attribution, and how to get sales to fill them in |
+
+### Testing
+| Doc | What it covers |
+|---|---|
+| [Paid Media Test & Learn](testing/paid-media-test-and-learn.md) | A/B testing framework for B2B volumes — feasibility checks, hypothesis writing, calling winners, Learning Library |
+
+### Templates
+| File | What it covers |
+|---|---|
 | [UTM Tracker Template](templates/utm-tracker-template.csv) | Copy-paste template for tracking all paid links in one place |
 
 ---
