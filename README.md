@@ -2,7 +2,7 @@
 
 A practical reference for B2B marketers on how to plan paid media campaigns, build retargeting audiences, and track marketing's contribution to pipeline in Salesforce.
 
-Built from real work running demand gen programs at B2B SaaS and professional services companies.
+Built from years of experience running demand gen programs at B2B SaaS and professional services companies.
 
 ---
 
