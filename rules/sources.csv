@@ -1,0 +1,10 @@
+utm_source,allowed_utm_medium,salesforce_campaign_type,notes
+linkedin,paid-social,Paid Social,Sponsored content and video and lead gen forms
+meta,paid-social,Paid Social,Mostly retargeting
+google,paid-search,Paid Search,Search campaigns; turn on auto-tagging for GCLID
+google,display,Display,Display and YouTube
+bing,paid-search,Paid Search,Microsoft Advertising
+zoominfo,display,Display,Account-based programmatic display
+selling-simplified,content-syndication,Content Syndication,Content syndication vendor
+intensify,content-syndication,Content Syndication,Content syndication vendor
+industry-newsletter,sponsored-email,Email,Sponsored email in a partner newsletter

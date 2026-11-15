@@ -4,9 +4,62 @@
 >
 > 1. Plan (coming soon) → **2. Set up** → [3. Test](https://github.com/rachelhong-marketing/b2b-campaign-test-planner) → 4. Report (coming soon) → [5. Prove](https://github.com/rachelhong-marketing/b2b-pipeline-attribution-tool)
 
-A practical reference for B2B marketers on how to plan paid media campaigns, build retargeting audiences, and track marketing's contribution to pipeline in Salesforce.
+A practical reference for B2B marketers on how to plan paid media campaigns, build retargeting audiences, and track marketing's contribution to pipeline in Salesforce. It includes a **launch checker** that builds tracking links and catches tracking mistakes before the ads go live.
 
 Built from years of experience running demand gen programs at B2B SaaS and professional services companies.
+
+---
+
+## Launch checker: catch tracking mistakes before launch
+
+Most attribution problems start on launch day: a capital letter in `utm_source`, two test versions with the same `utm_content`, a link copied from the wrong row, or a Salesforce campaign nobody created. Once the ads run, those leads can't be traced back. The launch checker catches these before launch, using the rules in [UTM Naming Convention](tracking/utm-naming-convention.md) and [Salesforce Campaign Hierarchy](tracking/salesforce-campaign-hierarchy.md).
+
+### With Claude Code (no commands to type)
+
+The repo includes a Claude Code skill, `.claude/skills/paid-media-launch-checker/SKILL.md`. Download the repo, open the folder in Claude Code, and ask:
+
+- "Build links for our Q3 LinkedIn campaign: 3 video ads for CFOs, landing page yoursite.com/guide."
+- "Check sample-data/utm-tracker-sample.csv against the Salesforce campaigns before we launch."
+- "Which sources and mediums are we allowed to use?"
+
+It builds or checks the links, explains every problem in plain English with the fix, and can save a cleaned-up copy of the tracker. The rules come from the Python code, not the AI.
+
+### From the command line
+
+Python 3 only, nothing to install.
+
+```bash
+python3 -m launch_checker build --url https://yoursite.com/guide --source linkedin --medium paid-social \
+  --campaign 2026-q3-abm-tech-sector --content video-cfo
+python3 -m launch_checker check sample-data/utm-tracker-sample.csv --salesforce sample-data/salesforce-campaigns-sample.csv
+python3 -m launch_checker check my-tracker.csv --fixed my-tracker-fixed.csv
+python3 -m launch_checker rules
+python3 -m unittest discover -s tests
+```
+
+### What it checks
+
+| Check | Example it catches | Level |
+|---|---|---|
+| Format | `LinkedIn` or `Carousel CMO` instead of `linkedin`, `carousel-cmo` | Fix before launch |
+| Shared source list | `linkdin` (suggests `linkedin`) | Fix before launch |
+| Source and medium pair | `linkedin` with `paid-search` | Fix before launch |
+| Link matches its columns | The tagged link says `banner-728x90`, the tracker says `banner-300x250` | Fix before launch |
+| One `utm_content` per ad | Test versions A and B both tagged `video-cfo-a` | Fix before launch |
+| Landing page | `http://`, a stray space, or UTMs already in the page URL | Fix before launch |
+| Salesforce campaign exists | No campaign for the Bing Search row, so its leads won't be credited | Fix before launch |
+| Campaign name format | `q4-retargeting` instead of `2026-q4-retargeting` | Warning |
+| Campaign period vs. launch date | Named `2026-q3` but launches in October | Warning |
+| `utm_content` on social and display | A display ad with no `utm_content` | Warning |
+| `utm_term` only on search | A keyword on a Meta ad | Warning |
+| Salesforce parent and type | No parent campaign, or type "Paid Social" on a display campaign | Warning |
+| GCLID reminder | Google Search links: turn on auto-tagging and capture the GCLID | Note |
+
+On the made-up sample tracker, 7 of 14 links are ready to launch. The other 7 each have a planted mistake. `--fixed` cleans up format and rebuilds every link from its columns. It leaves wrong sources, mediums and duplicate content for a person to decide.
+
+Allowed sources and mediums live in [`rules/sources.csv`](rules/sources.csv). Add your own partners there.
+
+All sample data in [`sample-data/`](sample-data/) is made up.
 
 ---
 
@@ -40,7 +93,8 @@ Built from years of experience running demand gen programs at B2B SaaS and profe
 ### Templates
 | File | What it covers |
 |---|---|
-| [UTM Tracker Template](templates/utm-tracker-template.csv) | Copy-paste template for tracking all paid links in one place |
+| [UTM Tracker Template](templates/utm-tracker-template.csv) | Copy-paste template for tracking all paid links in one place (the launch checker reads this format) |
+| [Allowed sources and mediums](rules/sources.csv) | The shared source list the launch checker enforces; add your own partners |
 
 ---
 
@@ -82,7 +136,7 @@ Five tools, one per step of a B2B campaign, from the brief to proving pipeline. 
 | Step | Tool | What it does |
 |---|---|---|
 | 1. Plan | B2B Campaign Assistant (coming soon) | Turn a master brief into channel briefs; review copy and creative before launch. |
-| 2. Set up | **B2B Paid Media Planner** (this repo) | Plan channels and retargeting, and set up tracking (UTMs, GCLID, Salesforce campaigns). |
+| 2. Set up | **B2B Paid Media Planner** (this repo) | Plan channels and retargeting, then build and check tracking links before launch. |
 | 3. Test | [B2B Campaign Test Planner](https://github.com/rachelhong-marketing/b2b-campaign-test-planner) | Size tests on leads and MQLs, not clicks, and read the results. |
 | 4. Report | B2B Campaign Reporting Agent (coming soon) | Combine ad platform and CRM data, check the totals and draft insights. |
 | 5. Prove | [B2B Pipeline Attribution Tool](https://github.com/rachelhong-marketing/b2b-pipeline-attribution-tool) | Check the CRM data can be trusted, then show sourced and influenced pipeline. |
