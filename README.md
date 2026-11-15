@@ -1,5 +1,9 @@
 # B2B Paid Media Planner
 
+> **B2B Campaign Lifecycle Toolkit**, step 2 of 5
+>
+> 1. Plan (coming soon) → **2. Set up** → [3. Test](https://github.com/rachelhong-marketing/b2b-campaign-test-planner) → 4. Report (coming soon) → [5. Prove](https://github.com/rachelhong-marketing/b2b-pipeline-attribution-tool)
+
 A practical reference for B2B marketers on how to plan paid media campaigns, build retargeting audiences, and track marketing's contribution to pipeline in Salesforce.
 
 Built from years of experience running demand gen programs at B2B SaaS and professional services companies.
@@ -68,6 +72,20 @@ This repo captures the frameworks and processes I've used across B2B organizatio
 | Meta Ads | MOFU retargeting | Large audience pool, low CPC — good LinkedIn complement |
 | Content Syndication | TOFU | Rented audience via vendors (Selling Simplified, Intensify) |
 | Industry Association / Webinar | TOFU → MOFU | Third-party trust — reaches audiences you can't target directly |
+
+---
+
+## The B2B Campaign Lifecycle Toolkit
+
+Five tools, one per step of a B2B campaign, from the brief to proving pipeline. Each works on its own; together they cover the whole cycle. All sample data is made up.
+
+| Step | Tool | What it does |
+|---|---|---|
+| 1. Plan | B2B Campaign Assistant (coming soon) | Turn a master brief into channel briefs; review copy and creative before launch. |
+| 2. Set up | **B2B Paid Media Planner** (this repo) | Plan channels and retargeting, and set up tracking (UTMs, GCLID, Salesforce campaigns). |
+| 3. Test | [B2B Campaign Test Planner](https://github.com/rachelhong-marketing/b2b-campaign-test-planner) | Size tests on leads and MQLs, not clicks, and read the results. |
+| 4. Report | B2B Campaign Reporting Agent (coming soon) | Combine ad platform and CRM data, check the totals and draft insights. |
+| 5. Prove | [B2B Pipeline Attribution Tool](https://github.com/rachelhong-marketing/b2b-pipeline-attribution-tool) | Check the CRM data can be trusted, then show sourced and influenced pipeline. |
 
 ---
 
