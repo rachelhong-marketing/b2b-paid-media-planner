@@ -136,4 +136,4 @@ Spending money showing top-of-funnel ads to someone who's already in a demo stag
 
 - [Retargeting Strategy](retargeting-strategy.md) — audience pools and platform-specific setup
 - [Channel & Content Guide](channel-and-content-guide.md) — content format matching by funnel stage
-- [Campaign Planning Framework](../campaign-planning/campaign-planning-framework.md) — how to build the campaign strategy upstream of channel execution
+- [Campaign Planning Framework](https://github.com/rachelhong-marketing/b2b-campaign-assistant/blob/main/framework/campaign-planning-framework.md) (step 1, B2B Campaign Assistant): how to build the campaign strategy upstream of channel execution
