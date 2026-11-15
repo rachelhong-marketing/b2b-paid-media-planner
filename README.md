@@ -1,4 +1,4 @@
-# B2B Paid Media Playbook
+# B2B Paid Media Planner
 
 A practical reference for B2B marketers on how to plan paid media campaigns, build retargeting audiences, and track marketing's contribution to pipeline in Salesforce.
 
