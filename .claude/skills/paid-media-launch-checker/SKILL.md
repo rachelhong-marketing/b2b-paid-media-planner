@@ -26,7 +26,7 @@ Run commands from the repo root: `python3 -m launch_checker <command>` (Python 3
    - `utm_campaign` = `{year}-{q1-q4 or h1/h2}-{program}`, optionally `-{asset}`, all lowercase with hyphens.
    - `utm_content` = one value per ad. Test versions always get different values (for example `hl-problem` and `hl-outcome`).
 3. Run `python3 -m launch_checker build --url ... --source ... --medium ... --campaign ... --content ...` once per ad.
-4. Give the links as a table in the tracker's column order (see `templates/utm-tracker-template.csv`), so they can paste it in. Suggest the Salesforce campaign name for each row (for example `2026-Q3 Data Readiness — LinkedIn Video A`) under a parent campaign.
+4. Give the links as a table in the tracker's column order (see `templates/utm-tracker-template.csv`), so they can paste it in. Suggest the Salesforce campaign name for each row (for example `2026-Q3 Clean Customer Data — LinkedIn Video A`) under a parent campaign.
 
 ## Step B. Check a tracker
 
