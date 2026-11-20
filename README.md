@@ -142,4 +142,4 @@ Five tools, one per step of a B2B campaign, from the brief to proving pipeline. 
 
 ## Connect
 
-[LinkedIn](https://www.linkedin.com/in/rachelhongatbaruch/) · [Accelerator Consulting](https://acceleratorsconsulting.com)
+[LinkedIn](https://www.linkedin.com/in/rachelhongatbaruch/)
