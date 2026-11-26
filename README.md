@@ -8,6 +8,28 @@ A practical reference for B2B marketers on how to plan paid media campaigns, bui
 
 Built from years of experience running demand gen programs at B2B SaaS and professional services companies.
 
+## What you give it, and what you get back
+
+### What you give it
+
+| You provide | What it is | Used for |
+|---|---|---|
+| Campaign details | Landing page, platform, audience, ad names, launch date | Building tagged links |
+| UTM tracker | A spreadsheet with one row per ad and its tagged link ([blank template](templates/utm-tracker-template.csv)) | Checking before launch |
+| Salesforce campaign list (optional) | The campaigns that already exist in Salesforce ([sample](sample-data/salesforce-campaigns-sample.csv)) | Making sure every ad has a campaign to credit |
+| Your sources and mediums (optional) | Partners to add to the allowed list ([`rules/sources.csv`](rules/sources.csv)) | Naming rules |
+
+### What you get back
+
+| Output | What it looks like | Command |
+|---|---|---|
+| Tagged links | A correct link for each ad, built from its details | `build` |
+| Launch check | Each row ready or not, with every problem explained in plain English and the fix | `check` |
+| Cleaned tracker | A copy with formatting fixed and links rebuilt. Wrong sources and duplicate tags are left for a person to decide | `check --fixed` |
+| Allowed list | The sources and mediums you can use | `rules` |
+
+The guides below (channels, retargeting, tracking, testing) are reference reading and don't need any input.
+
 ---
 
 ## Launch checker: catch tracking mistakes before launch
