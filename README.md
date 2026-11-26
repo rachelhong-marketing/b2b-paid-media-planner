@@ -17,7 +17,7 @@ Built from years of experience running demand gen programs at B2B SaaS and profe
 | Campaign details | Landing page, platform, audience, ad names, launch date | Building tagged links |
 | UTM tracker | A spreadsheet with one row per ad and its tagged link ([blank template](templates/utm-tracker-template.csv)) | Checking before launch |
 | Salesforce campaign list (optional) | The campaigns that already exist in Salesforce ([sample](sample-data/salesforce-campaigns-sample.csv)) | Making sure every ad has a campaign to credit |
-| Your sources and mediums (optional) | Partners to add to the allowed list ([`rules/sources.csv`](rules/sources.csv)) | Naming rules |
+| Your own ad partners (optional) | Add any partner not already in the [approved names list](rules/sources.csv), such as a new syndication vendor | Naming rules |
 
 ### What you get back
 
@@ -26,7 +26,17 @@ Built from years of experience running demand gen programs at B2B SaaS and profe
 | Tagged links | A correct link for each ad, built from its details | `build` |
 | Launch check | Each row ready or not, with every problem explained in plain English and the fix | `check` |
 | Cleaned tracker | A copy with formatting fixed and links rebuilt. Wrong sources and duplicate tags are left for a person to decide | `check --fixed` |
-| Allowed list | The sources and mediums you can use | `rules` |
+| Approved names list | The exact spellings your team may use for where traffic comes from (`linkedin`) and how (`paid-social`) | `rules` |
+
+### What the approved names list is for
+
+Every tagged link says where the click came from (the **source**, such as `linkedin`) and what kind of ad it was (the **medium**, such as `paid-social`). Those words end up in your reports and in Salesforce.
+
+If one person types `LinkedIn`, another types `linkedin` and a third types `linkdin`, your tools count them as three different sources. Reports split, totals don't add up, and some leads can't be traced to the ad that brought them in.
+
+The approved names list ([`rules/sources.csv`](rules/sources.csv)) is the team's agreed spelling for each partner, the matching medium, and the Salesforce campaign type. The checker compares every link against it. A name that isn't on the list fails the check, and a near miss gets a suggestion ("`linkdin` — did you mean `linkedin`?").
+
+Adding a new partner takes one row. For example, to start using a new syndication vendor, add its name, `content-syndication` as the medium, and `Content Syndication` as the Salesforce type.
 
 The guides below (channels, retargeting, tracking, testing) are reference reading and don't need any input.
 
@@ -79,7 +89,7 @@ python3 -m unittest discover -s tests
 
 On the made-up sample tracker, 7 of 14 links are ready to launch. The other 7 each have a planted mistake. `--fixed` cleans up format and rebuilds every link from its columns. It leaves wrong sources, mediums and duplicate content for a person to decide.
 
-Allowed sources and mediums live in [`rules/sources.csv`](rules/sources.csv). Add your own partners there.
+The approved source and medium names live in [`rules/sources.csv`](rules/sources.csv). Add your own partners there.
 
 All sample data in [`sample-data/`](sample-data/) is made up.
 
